@@ -48,7 +48,7 @@
             });
         },
         useNavigation: function() {
-            var links = document.querySelectorAll("#parallax-navegacion a");
+            var links = document.querySelectorAll("#navigation-ul a");
             var self = this;
             for (var i = 0; i < links.length; ++i) {
                 var link = links[i];
@@ -56,7 +56,7 @@
                     e.preventDefault();
                     var a = this;
 
-                    a.className = "parallax-navegacion-actual";
+                    a.className = "navigation-initial";
 
                     for (var j = 0; j < links.length; ++j) {
                         var el = links[j];
@@ -78,7 +78,7 @@
 
                     self._scrollToSection(section, function(el) {
                         var h2 = el.querySelector("h2");
-                        var headings = document.querySelectorAll("#posicion h2");
+                        var headings = document.querySelectorAll("#container h2");
                         h2.className = "bounceIn";
 
                         for (var l = 0; l < headings.length; ++l) {
@@ -95,7 +95,7 @@
 
         positionNavigation: function() {
 
-            var nav = document.getElementById("parallax-navegacion");
+            var nav = document.getElementById("navigation-ul");
             var height = nav.offsetHeight;
             nav.style.marginTop = "-" + (height / 2) + "px";
 
@@ -107,7 +107,7 @@
 
             var html = "";
 
-            nav.id = "parallax-navegacion";
+            nav.id = "navigation-ul";
 
             document.body.appendChild(nav);
 
@@ -118,7 +118,7 @@
                 html += "<a href='#" + id + "'>" + (i + 1) + "</a>";
             }
 
-            document.getElementById("parallax-navegacion").innerHTML = html;
+            document.getElementById("navigation-ul").innerHTML = html;
 
         },
 
@@ -146,7 +146,7 @@
 
         _scrollToSection: function(element, callback) {
 
-            var site = document.querySelector("#posicion");
+            var site = document.querySelector("#container");
             site.style.transform = "translateY(-" + element.offsetTop + "px)";
 
             setTimeout(function() {
@@ -162,7 +162,7 @@
             var self = this;
             var delta = e.detail < 0 || e.wheelDelta > 0 ? 1 : -1;
             var active = document.querySelector(".active");
-            var links = document.querySelectorAll("#parallax-navegacion a");
+            var links = document.querySelectorAll("#navigation-ul a");
 
             if (delta < 0) {
 
@@ -175,7 +175,7 @@
                         self._scrollToSection(next, function(el) {
 
                             var h2 = el.querySelector("h2");
-                            var headings = document.querySelectorAll("#posicion h2");
+                            var headings = document.querySelectorAll("#container h2");
                             h2.className = "bounceIn";
 
                             for (var l = 0; l < headings.length; ++l) {
@@ -197,7 +197,7 @@
 
                         var a = document.querySelector("a[href='#" + next.id + "']");
 
-                        a.className = "parallax-navegacion-actual";
+                        a.className = "navigation-initial";
 
                         for (var j = 0; j < links.length; ++j) {
                             var el = links[j];
@@ -219,7 +219,7 @@
                         self._scrollToSection(prev, function(el) {
 
                             var h2 = el.querySelector("h2");
-                            var headings = document.querySelectorAll("#posicion h2");
+                            var headings = document.querySelectorAll("#container h2");
                             h2.className = "bounceIn";
 
                             for (var l = 0; l < headings.length; ++l) {
@@ -241,7 +241,7 @@
 
                         var a = document.querySelector("a[href='#" + prev.id + "']");
 
-                        a.className = "parallax-navegacion-actual";
+                        a.className = "navigation-initial";
 
                         for (var j = 0; j < links.length; ++j) {
                             var el = links[j];
@@ -260,7 +260,7 @@
     };
 
     document.addEventListener("DOMContentLoaded", function() {
-        return new Parallax([".pagina-seccion"]);
+        return new Parallax([".section-page"]);
     });
 
 })();
