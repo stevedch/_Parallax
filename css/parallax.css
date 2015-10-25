@@ -1,0 +1,144 @@
+body {
+    overflow: hidden;
+}
+.parallax-grupo {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 1px;
+    -moz-perspective: 1px;
+    -ms-perspective: 1px;
+    perspective: 1px;
+    position: relative;
+}
+
+.parallax-envoltura {
+    bottom: 0;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    position: absolute;
+    top: 0;
+    right: 650px;
+    /*right: 0;*/
+    z-index: 6;
+}
+
+.parallax-contenido {
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 50%;
+}
+
+.numero-pagina-1 {  background-color:  #E2F16D;  z-index:  200; }
+.numero-pagina-2 {  background-color:  #E2F17D;  z-index:  180; }
+.numero-pagina-3 {  background-color:  #E2F18D;  z-index:  60;  }
+.numero-pagina-4 {  background-color:  #E2F19D;  z-index:  40;  }
+.numero-pagina-5 {  background-color:  #E2F26D;  z-index:  20;  }
+.numero-pagina-6 {  background-color:  #E2F27D;  z-index:  0;   }
+.numero-pagina-7 {  background-color:  #E2F28D;  z-index:  -20; }
+.numero-pagina-8 {  background-color:  #E2F29D;  z-index:  -40; }
+
+
+.pagina-seccion h2 {
+    color: #fff;
+    font-size: 4em;
+    font-weight: normal;
+    margin: -0.5em 0 0 0;
+    text-transform: uppercase;
+    top: 50%;
+    position: relative;
+    opacity: 0;
+    width: 100%;
+}
+
+.titulo,
+.parrafo {
+ color: #333;
+}
+
+#posicion {
+    position: relative;
+    -webkit-transition: all 500ms ease-in;
+    -o-transition: all 500ms ease-in;
+    transition: all 500ms ease-in;
+    width: 100%;
+}
+
+#posicion > .pagina-seccion:first-child h2 {
+    opacity: 1;
+}
+
+/*= Parallax */
+
+#parallax-navegacion {
+    position: fixed;
+    top: 50%;
+    z-index: 10000000;
+    width: 12px;
+    right: 1em;
+}
+
+#parallax-navegacion a {
+    display: block;
+    width: 12px;
+    height: 12px;
+    text-indent: -9999em;
+    transition: all 400ms ease-in;
+    background: #fff;
+    border-radius: 50%;
+    margin-bottom: 0.9em;
+}
+
+#parallax-navegacion a:hover,
+#parallax-navegacion a.parallax-navegacion-actual {
+    background: #656565;
+}
+
+@keyframes bounceIn {
+
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.2,1.2,2);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+    animation-duration: .75s;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
