@@ -168,46 +168,75 @@
 
 
 
-$("#ingresar").on("click", function() {
+// $("#ingresar").on("click", function() {
+
+
+// if ($('#ingresar').val() != '') {
+
+// console.log('Buscar Rut: ' + $('#ingresar').val());
+
+//         // $('.input-tesr').bind('input', function() {
+//         //     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
+//         // });
+
+
+// $('#input-tesr').on('change', function() {
+//     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
+// });
+// $(".input-tesr").trigger("change");
+//         // $("#ingresar").trigger("click", function() {
+//         //     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
+//         // });
+//         // $(".input-tesr").trigger("click");
+//         // if ($('#ingresar').val() == '') {
+//         //     console.log('si esta vacio');
+//         // } else {
+//         //     console.log('no esta vacío busco el rut: ' + $('#ingresar').val());
+// }
+
+
+
+// }).trigger("click");
+
+
+// $("#ingresar").trigger("click");
+
+var $mensaje = '';
+
+$('#ingresar').on('input', function() {
+
+    // if ($('#ingresar').val() == '') {
+
+    // console.log($('#ingresar').val());
+    // $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
+    // $mensaje = 'No ningún campo a buscar';
+    // console.log($mensaje);
+    // $('#mensaje').next().stop(true, true).fadeIn(0).html(mensaje).fadeOut(2000);
+    // $('#mensaje').fadeIn(0).html($mensaje).fadeOut(4000);
+
+    // } else {
+
+    // $mensaje = 'Desea buscar el número ?';
+    // console.log($mensaje);
+    // $('#mensaje').next().stop(true, true).fadeIn(0).html(mensaje).fadeOut(2000);
+    // $('#mensaje').fadeIn(0).html($mensaje).fadeOut(4000);
+
+    // }
 
 
     if ($('#ingresar').val() != '') {
 
-        console.log('Buscar Rut: ' + $('#ingresar').val());
+            $mensaje = 'Desea buscar el número ?';
+            // console.log($mensaje);
+            // $('#mensaje').next().stop(true, true).fadeIn(0).html(mensaje).fadeOut(2000);
+            $('#mensaje').fadeIn(0).html($mensaje).fadeOut(4000);
 
-        //         // $('.input-tesr').bind('input', function() {
-        //         //     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
-        //         // });
-
-
-        // $('#input-tesr').on('change', function() {
-        //     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
-        // });
-        // $(".input-tesr").trigger("change");
-        //         // $("#ingresar").trigger("click", function() {
-        //         //     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
-        //         // });
-        //         // $(".input-tesr").trigger("click");
-        //         // if ($('#ingresar').val() == '') {
-        //         //     console.log('si esta vacio');
-        //         // } else {
-        //         //     console.log('no esta vacío busco el rut: ' + $('#ingresar').val());
     }
 
-
-
-});
-
-
-$("#ingresar").trigger("click");
-
-
-
-$('.input-tesr').on('input', function() {
-    console.log($('#ingresar').val());
-     $(this).next().stop(true, true).fadeIn(0).html($(this).val()).fadeOut(2000);
+    return $mensaje;
     // console.log($(this).val());
-});
+
+}).trigger('input');
 
 
-$(".input-tesr").trigger("input");
+// $(".input-tesr").trigger("input");
